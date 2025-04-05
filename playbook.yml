@@ -1,5 +1,5 @@
 - name: Get the hostname of the system
-  hosts: localhost
+  hosts: localhos
   gather_facts: yes
   tasks:
     - name: Display the hostname
