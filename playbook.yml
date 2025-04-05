@@ -1,7 +1,7 @@
 - name: Get the hostname of the system
-  hosts: localhos
+  hosts: localhost
   gather_facts: yes
   tasks:
     - name: Display the hostname
       debug:
-        msg: "The hostname of this system is {{ ansible_hostname }}"
+        msg: "The hostname of this system is {{ ansible_hostnamse }}"
