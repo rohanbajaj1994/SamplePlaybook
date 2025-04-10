@@ -6,6 +6,10 @@
       debug:
         msg: "The hostname of this system is {{ ansible_hostname }}"
 
+    - name: Display passed extra vars
+      debug:
+        msg: "The file path provided is: {{ file_path }}"
+        
     - name: Creating an empty file
       file:
         path: "{{ file_path }}"  # Path will be taken from extra vars
