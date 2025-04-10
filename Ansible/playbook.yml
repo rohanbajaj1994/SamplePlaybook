@@ -8,5 +8,5 @@
 
     - name: Display all passed extra-vars
       debug:
-        msg: "Key: {{ item }} , Value: {{ vars[item] }}"
-      loop: "{{ vars | dict2items | selectattr('key', 'search', '.*') | map(attribute='key') | list }}"
+        msg: "Key: {{ item.key }} , Value: {{ item.value }}"
+      loop: "{{ vars | dict2items }}"
