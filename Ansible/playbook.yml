@@ -6,6 +6,7 @@
       debug:
         msg: "The hostname of this system is {{ ansible_hostname }}"
 
-    - name: Print all extra variables
+    - name: Display all extra variables from dictionary
       debug:
-        msg: "Extra variables: {{ lookup('env', 'extra_vars') }}"
+        msg: "{{ item.key }}={{ item.value }}"
+      with_dict: "{{ extra_vars }}"
