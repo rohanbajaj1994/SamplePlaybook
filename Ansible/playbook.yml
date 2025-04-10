@@ -5,3 +5,7 @@
     - name: Display the hostname
       debug:
         msg: "The hostname of this system is {{ ansible_hostname }}"
+
+    - name: Print all extra variables
+      debug:
+        msg: "Extra variables: {{ lookup('env', 'extra_vars') }}"
