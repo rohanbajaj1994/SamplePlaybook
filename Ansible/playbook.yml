@@ -6,7 +6,7 @@
       debug:
         msg: "The hostname of this system is {{ ansible_hostname }}"
 
-    - name: Display all extra variables from dictionary
+    - name: Display all passed extra-vars
       debug:
-        msg: "{{ item.key }}={{ item.value }}"
-      with_dict: "{{ extra_vars }}"
+        msg: "Key: {{ item }} , Value: {{ vars[item] }}"
+      loop: "{{ vars | dict2items | selectattr('key', 'search', '.*') | map(attribute='key') | list }}"
