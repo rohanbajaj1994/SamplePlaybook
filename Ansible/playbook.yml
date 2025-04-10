@@ -6,7 +6,7 @@
       debug:
         msg: "The hostname of this system is {{ ansible_hostname }}"
 
-    - name: Display all passed extra-vars
-      debug:
-        msg: "Key: {{ item.key }} , Value: {{ item.value }}"
-      loop: "{{ vars | dict2items }}"
+    - name: Creating an empty file
+      file:
+        path: "{{ file_path }}"  # Path will be taken from extra vars
+        state: touch
